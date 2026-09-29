@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WebWise | Professional Websites for Small Businesses</title>
+<meta name="description" content="WebWise designs fast, professional websites for small businesses. Launch in days, starting at $79. Clear pricing, no surprises.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b1f;--bg2:#0d1330;--line:#25305e;--ink:#eef1fb;--mute:#9aa6cf;--teal:#3ea6c6;--gold:#d9b877;--gold-d:#b8974f}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.serif{font-family:Fraunces,Georgia,serif;font-weight:500;letter-spacing:-.01em}
+header{position:sticky;top:0;z-index:10;background:rgba(7,11,31,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12;padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.5rem;text-decoration:none;letter-spacing:.04em}
+.brand span{color:var(--teal)}
+.menu{display:flex;gap:30px;align-items:center}
+.menu a{text-decoration:none;color:var(--mute);font-size:.93rem;font-weight:500;transition:color .2s}
+.menu a:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.98rem;padding:13px 28px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#1a1405;box-shadow:0 8px 30px -8px #d9b87799}
+.menu a.btn.gold{color:#1a1405}
+.btn.line{border-color:#ffffff30;color:var(--ink)}
+.btn.line:hover{background:#ffffff0e}
+.btn.sm{padding:9px 20px;font-size:.88rem}
+.hero{position:relative;overflow:hidden;padding:120px 0 110px;text-align:center}
+.hero::before{content:"";position:absolute;inset:-200px 0 auto 0;height:640px;background:radial-gradient(ellipse at 50% 30%,#2c8aa833,transparent 62%),radial-gradient(ellipse at 80% 10%,#d9b87720,transparent 50%);pointer-events:none}
+.hero .wrap{position:relative}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid #d9b87740;padding:7px 16px;border-radius:999px;margin-bottom:28px}
+h1{font-size:clamp(2.5rem,6.4vw,4.7rem);line-height:1.08;max-width:15em;margin:0 auto}
+h1 em{font-style:italic;color:var(--gold)}
+.lead{color:var(--mute);font-size:1.15rem;max-width:34em;margin:26px auto 38px}
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.proof{display:flex;gap:44px;justify-content:center;flex-wrap:wrap;margin:70px auto 0;padding-top:34px;border-top:1px solid #ffffff12;max-width:760px}
+.proof div{text-align:center}
+.proof b{display:block;font-family:Fraunces,Georgia,serif;font-size:2rem;font-weight:500}
+.proof span{font-size:.85rem;color:var(--mute)}
+section{padding:100px 0}
+.head{text-align:center;max-width:640px;margin:0 auto 60px}
+.head small{color:var(--gold);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:12px 0 14px}
+.head p{color:var(--mute)}
+.alt{background:var(--bg2)}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pack{position:relative;background:linear-gradient(180deg,#131d45,#0e1636);border:1px solid var(--line);border-radius:26px;padding:38px 32px;display:flex;flex-direction:column}
+.pack h3{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.6rem}
+.pack .for{color:var(--mute);font-size:.93rem;margin:4px 0 22px;min-height:3em}
+.price{font-family:Fraunces,Georgia,serif;font-size:3.4rem;line-height:1;font-weight:500}
+.price sup{font-size:1.4rem;vertical-align:top;position:relative;top:.45em;margin-right:2px;color:var(--mute)}
+.once{font-size:.82rem;color:var(--mute);margin:8px 0 26px}
+.pack ul{list-style:none;padding:0;display:grid;gap:12px;margin-bottom:34px;flex:1;font-size:.96rem}
+.pack li{display:flex;gap:12px;color:#d6dcf3}
+.pack li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:#3ea6c626 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%233ea6c6' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.pack .btn{text-align:center}
+.pack.pop{border-color:var(--gold);background:linear-gradient(180deg,#1a2350,#0f1738);box-shadow:0 30px 80px -30px #d9b87755;transform:translateY(-14px)}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#1a1405;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.note{text-align:center;color:var(--mute);font-size:.88rem;margin-top:34px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{border-top:1px solid var(--line);padding-top:26px}
+.step i{font-family:Fraunces,Georgia,serif;font-style:normal;font-size:2.6rem;color:var(--gold);line-height:1}
+.step h3{font-size:1.15rem;margin:14px 0 8px}
+.step p{color:var(--mute);font-size:.96rem}
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:1.4rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mute);margin-top:12px;font-size:.98rem}
+.cta{text-align:center;background:radial-gradient(ellipse at 50% 0,#2c8aa833,transparent 65%),var(--bg)}
+.cta p{color:var(--mute);max-width:32em;margin:0 auto 34px}
+footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1px solid #ffffff12;color:var(--mute);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:900px){
+ .packs,.steps{grid-template-columns:1fr}
+ .pack.pop{transform:none;order:-1}
+ .menu a:not(.btn){display:none}
+ .hero{padding:72px 0 70px}
+ section{padding:70px 0}
+ .proof{gap:26px;margin-top:50px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+
+<!-- Meta Pixel Code: replace YOUR_PIXEL_ID with your Pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="brand" href="#top">WEB<span>WISE</span></a>
+ <nav class="menu" aria-label="Main">
+  <a href="#packs">Packages</a>
+  <a href="#process">Process</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn gold sm" href="#contact">Get started</a>
+ </nav>
+</div></header>
+
+<main id="top">
+ <div class="hero"><div class="wrap">
+  <span class="eyebrow">Websites for small businesses</span>
+  <h1 class="serif">A website that makes your business look <em>as good</em> as it is.</h1>
+  <p class="lead">Fast, elegant, mobile-ready websites designed for local businesses and independent professionals. Clear pricing, live in days.</p>
+  <div class="actions">
+   <a class="btn gold" href="#contact">Start your project</a>
+   <a class="btn line" href="#packs">See packages</a>
+  </div>
+  <div class="proof">
+   <div><b>from $79</b><span>Fixed, upfront pricing</span></div>
+   <div><b>2 to 7 days</b><span>Typical delivery</span></div>
+   <div><b>100%</b><span>Mobile-optimized</span></div>
+  </div>
+ </div></div>
+
+ <section id="packs" class="alt"><div class="wrap">
+  <div class="head">
+   <small>Packages</small>
+   <h2 class="serif">Simple pricing. No surprises.</h2>
+   <p>One-time payment. You own your website, always.</p>
+  </div>
+  <div class="packs">
+   <article class="pack">
+    <h3>Launch</h3>
+    <p class="for">A sharp one-page site to get you online fast.</p>
+    <div class="price"><sup>$</sup>79</div>
+    <p class="once">one-time</p>
+    <ul>
+     <li>1 custom-designed page</li>
+     <li>Mobile-friendly design</li>
+     <li>Contact button or form</li>
+     <li>Basic SEO setup</li>
+     <li>1 round of revisions</li>
+     <li>Delivered in 2 to 3 days</li>
+    </ul>
+    <a class="btn line" data-pack="Launch" data-value="79" href="#contact">Choose Launch</a>
+   </article>
+
+   <article class="pack pop">
+    <span class="badge">Most popular</span>
+    <h3>Business</h3>
+    <p class="for">A complete professional website for your business.</p>
+    <div class="price"><sup>$</sup>150</div>
+    <p class="once">one-time</p>
+    <ul>
+     <li>Up to 5 pages (Home, Services, About, Gallery, Contact)</li>
+     <li>Custom colors and your logo</li>
+     <li>Contact form, click-to-call, Google Maps</li>
+     <li>SEO setup and Google Business Profile guidance</li>
+     <li>2 rounds of revisions</li>
+     <li>Delivered in 4 to 5 days</li>
+    </ul>
+    <a class="btn gold" data-pack="Business" data-value="150" href="#contact">Choose Business</a>
+   </article>
+
+   <article class="pack">
+    <h3>Growth</h3>
+    <p class="for">Your website, plus the tools to bring in customers.</p>
+    <div class="price"><sup>$</sup>299</div>
+    <p class="once">one-time</p>
+    <ul>
+     <li>Up to 7 pages</li>
+     <li>Professional copywriting included</li>
+     <li>Online booking link (Calendly or similar)</li>
+     <li>Meta Pixel and Google Analytics</li>
+     <li>Ad campaign setup (ad spend paid separately)</li>
+     <li>3 rounds of revisions</li>
+     <li>Delivered in 7 days</li>
+    </ul>
+    <a class="btn line" data-pack="Growth" data-value="299" href="#contact">Choose Growth</a>
+   </article>
+  </div>
+  <p class="note">A domain name (about $12 per year) is paid directly by you. Hosting setup is included.</p>
+ </div></section>
+
+ <section id="process"><div class="wrap">
+  <div class="head">
+   <small>How it works</small>
+   <h2 class="serif">From first message to live site.</h2>
+  </div>
+  <div class="steps">
+   <div class="step"><i>01</i><h3>Tell us about your business</h3><p>Send us your services, photos and any brand colors you like. We handle the rest.</p></div>
+   <div class="step"><i>02</i><h3>We design and build</h3><p>You get a preview link to review. Request changes until it feels right, within your package.</p></div>
+   <div class="step"><i>03</i><h3>Go live</h3><p>We connect your domain, publish your site and make sure it works on every device.</p></div>
+  </div>
+ </div></section>
+
+ <section id="faq" class="alt"><div class="wrap">
+  <div class="head"><small>FAQ</small><h2 class="serif">Good to know</h2></div>
+  <div class="faq">
+   <details><summary>Do I need to provide the text and photos?</summary><p>For Launch and Business, yes: you send your content and we design around it. Growth includes professional copywriting.</p></details>
+   <details><summary>How do payments work?</summary><p>We take 50% upfront to start and 50% when you approve the final site. Card and PayPal accepted.</p></details>
+   <details><summary>Do I own the website?</summary><p>Yes. Once the final payment is made, the site and its code are yours.</p></details>
+   <details><summary>What if I need changes after launch?</summary><p>Revisions are included during the build. After launch, small updates are available at a fair hourly rate.</p></details>
+   <details><summary>Do you build online stores?</summary><p>Not at the moment. We focus on business websites, landing pages and lead generation.</p></details>
+  </div>
+ </div></section>
+
+ <section id="contact" class="cta"><div class="wrap">
+  <div class="head" style="margin-bottom:26px">
+   <small>Get started</small>
+   <h2 class="serif">Let's build your website.</h2>
+  </div>
+  <p>Tell us about your business and we'll reply within 24 hours with next steps.</p>
+  <a class="btn gold" id="mail" href="#">Email us</a>
+ </div></section>
+</main>
+
+<footer><div class="wrap">
+ <span>&copy; <span id="y"></span> WebWise. All rights reserved.</span>
+ <span>Professional websites for small businesses</span>
+</div></footer>
+
+<script>
+// Set your contact email here
+var EMAIL="hello@yourdomain.com";
+document.getElementById("y").textContent=new Date().getFullYear();
+
+function mailto(pack){
+ var s=encodeURIComponent("WebWise inquiry"+(pack?" - "+pack+" package":""));
+ var b=encodeURIComponent("Hi WebWise,\n\nBusiness name:\nWhat we do:\nCurrent website (if any):\n\nThanks!");
+ return "mailto:"+EMAIL+"?subject="+s+"&body="+b;
+}
+document.getElementById("mail").href=mailto("");
+document.getElementById("mail").addEventListener("click",function(){
+ if(typeof fbq==="function")fbq("track","Contact",{content_name:"Contact"});
+});
+
+// Pack buttons open an email and send a Purchase event with the pack price
+document.querySelectorAll("[data-pack]").forEach(function(a){
+ a.href=mailto(a.dataset.pack);
+ a.addEventListener("click",function(){
+  if(typeof fbq==="function")fbq("track","Purchase",{value:Number(a.dataset.value),currency:"USD",content_name:a.dataset.pack});
+ });
+});
+</script>
+</body>
+</html>
