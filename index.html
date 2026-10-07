@@ -6,6 +6,23 @@
 <title>WebWise | Affordable Websites for Small Businesses, From $125</title>
 <meta name="description" content="WebWise builds fast, professional websites for small businesses. One-page sites from $125, five-page sites from $325. Message us on WhatsApp to get started.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1678699017163077');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1678699017163077&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -262,6 +279,17 @@ var hello = "Hi WebWise! I'd like to talk about getting a website.";
 ["waHero","waBook","waFoot","waFloat"].forEach(function(id){ document.getElementById(id).href = wa(hello); });
 document.getElementById("yr").textContent = new Date().getFullYear();
 
+// Meta Pixel: fire a Purchase event (change EVENT_NAME to "Lead" or "Contact" if you prefer)
+var EVENT_NAME = "Purchase";
+function track(value, label){
+  try{
+    if(window.fbq){ fbq("track", EVENT_NAME, {value: value, currency: "USD", content_name: label}); }
+  }catch(err){}
+}
+["waHero","waBook","waFoot","waFloat"].forEach(function(id){
+  document.getElementById(id).addEventListener("click", function(){ track(125, "WhatsApp click"); });
+});
+
 document.querySelectorAll("[data-plan]").forEach(function(a){
   a.addEventListener("click", function(){ document.getElementById("plan").value = a.dataset.plan; });
 });
@@ -275,6 +303,8 @@ document.getElementById("f").addEventListener("submit", function(e){
     return;
   }
   err.textContent = "";
+  var planVal = v("plan").indexOf("$325") > -1 ? 325 : 125;
+  track(planVal, "Form: " + v("plan"));
   var text = "Hi WebWise! I'd like to book a website.\n\n" +
     "Name: " + v("name") + "\n" +
     "Email: " + v("email") + "\n" +
