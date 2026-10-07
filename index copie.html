@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebWise | Affordable Websites for Small Businesses, From $125</title>
+<meta name="description" content="WebWise builds fast, professional websites for small businesses. One-page sites from $125, five-page sites from $325. Message us on WhatsApp to get started.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦉</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F2; --ink:#14213D; --blue:#2342E8; --sun:#FFC83D; --mist:#E4E8F5; --line:#C9CFE3;
+  --head:'Bricolage Grotesque',Georgia,sans-serif; --body:'Instrument Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--head);line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.5rem,7vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;margin-bottom:12px}
+h3{font-size:1.45rem;font-weight:800}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:600;text-decoration:none;padding:14px 24px;border-radius:10px;border:0;font:600 1rem var(--body);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.sun{background:var(--sun);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+header{padding:18px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-family:var(--head);font-weight:800;font-size:1.4rem;text-decoration:none}
+.logo span{color:var(--blue)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-weight:500}
+nav .btn{padding:10px 18px;color:#fff}
+@media(max-width:640px){nav a:not(.btn){display:none}}
+
+.hero{padding:48px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero p.lead{font-size:1.2rem;margin:20px 0 28px;max-width:34em}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.hero small{display:block;margin-top:16px;opacity:.75}
+.browser{background:#fff;border:2px solid var(--ink);border-radius:14px;box-shadow:10px 10px 0 var(--ink);overflow:hidden;transform:rotate(1.5deg)}
+.browser .bar{display:flex;gap:6px;padding:10px 14px;border-bottom:2px solid var(--ink);background:var(--mist)}
+.browser .bar i{width:11px;height:11px;border-radius:50%;background:var(--ink);opacity:.35}
+.browser .body{padding:22px}
+.browser .tag{display:inline-block;background:var(--sun);font-weight:600;font-size:.85rem;padding:3px 10px;border-radius:99px}
+.browser .big{font-family:var(--head);font-weight:800;font-size:2rem;line-height:1.1;margin:14px 0 10px}
+.browser .bl{height:10px;background:var(--mist);border-radius:6px;margin:8px 0}
+.browser .bl.s{width:60%}
+.browser .cta{margin-top:16px;display:inline-block;background:var(--blue);color:#fff;padding:9px 16px;border-radius:8px;font-weight:600;font-size:.9rem}
+
+section{padding:76px 0}
+.alt{background:var(--mist)}
+.sub{max-width:36em;margin-bottom:36px;opacity:.85}
+
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+.why div{border-top:3px solid var(--ink);padding-top:14px}
+.why h3{font-size:1.2rem;margin-bottom:6px}
+
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px;align-items:stretch}
+.plan{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:30px;display:flex;flex-direction:column}
+.plan.best{background:var(--ink);color:#fff;position:relative}
+.plan.best .badge{position:absolute;top:-14px;right:22px;background:var(--sun);color:var(--ink);font-weight:600;font-size:.85rem;padding:4px 12px;border-radius:99px}
+.price{font-family:var(--head);font-weight:800;font-size:3.6rem;line-height:1;margin:14px 0 4px}
+.price sup{font-size:1.6rem;vertical-align:top;position:relative;top:.4em}
+.plan ul{list-style:none;padding:0;margin:20px 0 28px;flex:1}
+.plan li{padding:7px 0 7px 28px;position:relative;border-bottom:1px solid rgba(128,138,170,.3)}
+.plan li::before{content:"";position:absolute;left:2px;top:14px;width:12px;height:7px;border-left:3px solid var(--blue);border-bottom:3px solid var(--blue);transform:rotate(-45deg)}
+.plan.best li::before{border-color:var(--sun)}
+.note{margin-top:22px;font-size:.95rem;opacity:.8}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:s}
+.steps div{counter-increment:s;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:22px}
+.steps div::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sun);font-weight:800;margin-bottom:12px}
+.steps h3{font-size:1.15rem;margin-bottom:4px}
+
+.book{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+@media(max-width:860px){.book{grid-template-columns:1fr}}
+form{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:28px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+input,select,textarea{font:400 1rem var(--body);padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none}
+textarea{min-height:100px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+.fine{font-size:.88rem;opacity:.75}
+.err{color:#B3261E;font-size:.9rem;min-height:1.2em}
+
+details{border-bottom:2px solid var(--line);padding:16px 0}
+summary{font-weight:600;cursor:pointer;font-size:1.1rem}
+details p{margin-top:8px;max-width:40em}
+
+footer{background:var(--ink);color:#fff;padding:36px 0;text-align:center}
+footer a{color:var(--sun)}
+.float{position:fixed;right:18px;bottom:18px;z-index:9;background:#25D366;color:#0b2b17;font-weight:600;text-decoration:none;padding:13px 18px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Web<span>Wise</span></a>
+    <nav>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#book">Book a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>A real website for your business, from $125.</h1>
+      <p class="lead">WebWise designs and builds fast, good-looking websites for small businesses, freelancers, and local services. Flat prices, no surprise fees, and you talk directly to the person building it.</p>
+      <div class="row">
+        <a class="btn" href="#book">Book your website</a>
+        <a class="btn ghost" id="waHero" href="#" target="_blank" rel="noopener">Message us on WhatsApp</a>
+      </div>
+      <small>Most one-page sites are ready within a few days.</small>
+    </div>
+    <div class="browser" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <span class="tag">Your business here</span>
+        <div class="big">Customers find you. Customers call you.</div>
+        <div class="bl"></div><div class="bl"></div><div class="bl s"></div>
+        <span class="cta">Get a free quote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>What you get with every site</h2>
+    <p class="sub">A website should bring you customers, not headaches. Every WebWise project includes:</p>
+    <div class="why">
+      <div><h3>Works on every phone</h3><p>Your site looks right on phones, tablets, and desktops.</p></div>
+      <div><h3>Built to load fast</h3><p>Clean code and optimized pages, because slow sites lose customers.</p></div>
+      <div><h3>Easy for people to contact you</h3><p>Call buttons, contact forms, and clear next steps for visitors.</p></div>
+      <div><h3>Found on Google</h3><p>Basic SEO setup so search engines can read and list your pages.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Simple, flat pricing</h2>
+    <p class="sub">Pick a package. The price you see is the price you pay.</p>
+    <div class="plans">
+      <article class="plan">
+        <h3>One-Page Website</h3>
+        <p>Everything your business needs on a single, focused page.</p>
+        <div class="price"><sup>$</sup>125</div>
+        <p class="fine">One-time payment</p>
+        <ul>
+          <li>1 custom-designed page</li>
+          <li>Mobile-friendly layout</li>
+          <li>Contact form or call button</li>
+          <li>Basic SEO setup</li>
+          <li>Launch support</li>
+        </ul>
+        <a class="btn" href="#book" data-plan="One-Page Website ($125)">Choose One-Page</a>
+      </article>
+      <article class="plan best">
+        <span class="badge">Best value</span>
+        <h3>5-Page Website</h3>
+        <p>A full site: Home, About, Services, Gallery or Blog, and Contact.</p>
+        <div class="price"><sup>$</sup>325</div>
+        <p class="fine">One-time payment</p>
+        <ul>
+          <li>5 custom-designed pages</li>
+          <li>Mobile-friendly layout</li>
+          <li>Contact form and WhatsApp or call buttons</li>
+          <li>SEO setup for every page</li>
+          <li>Launch support</li>
+        </ul>
+        <a class="btn sun" href="#book" data-plan="5-Page Website ($325)">Choose 5-Page</a>
+      </article>
+    </div>
+    <p class="note">Need something bigger, like a store or booking system? <a href="#book">Tell us about it</a> and we'll quote you.</p>
+  </div>
+</section>
+
+<section class="alt" id="process">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Four simple steps from first message to a live website.</p>
+    <div class="steps">
+      <div><h3>Tell us about your business</h3><p>Fill out the form below or message us on WhatsApp.</p></div>
+      <div><h3>Agree on the plan</h3><p>We confirm the package, content, and timeline.</p></div>
+      <div><h3>We build it</h3><p>You review the design and ask for changes.</p></div>
+      <div><h3>Your site goes live</h3><p>We publish it and make sure everything works.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book">
+    <div>
+      <h2>Book your website</h2>
+      <p class="sub">Tell us a little about your project. When you press the button, WhatsApp opens with your details ready to send, and we'll reply with next steps.</p>
+      <a class="btn" id="waBook" href="#" target="_blank" rel="noopener">Or message us directly</a>
+    </div>
+    <form id="f" novalidate>
+      <div class="two">
+        <label>Your name<input id="name" autocomplete="name" required></label>
+        <label>Email<input id="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="two">
+        <label>Business name<input id="biz" autocomplete="organization"></label>
+        <label>Package
+          <select id="plan">
+            <option>One-Page Website ($125)</option>
+            <option>5-Page Website ($325)</option>
+            <option>Something custom</option>
+          </select>
+        </label>
+      </div>
+      <label>Tell us about your project<textarea id="msg" placeholder="What does your business do? Do you have a logo or an existing site?"></textarea></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" type="submit">Send request on WhatsApp</button>
+      <p class="fine">Your request is sent through WhatsApp. We never share your details.</p>
+    </form>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap">
+    <h2>Questions people ask</h2>
+    <details><summary>How long does it take?</summary><p>One-page sites usually take a few days. Five-page sites take about a week or so, depending on how quickly you send content.</p></details>
+    <details><summary>What do I need to give you?</summary><p>Your business name, a short description, contact details, and any logo or photos you have. No content yet? Tell us and we'll help.</p></details>
+    <details><summary>Do I pay domain or hosting fees?</summary><p>The package price covers design and building. A domain name (usually about $12 a year) is paid to the registrar. We'll explain the options before you commit.</p></details>
+    <details><summary>Can I ask for changes?</summary><p>Yes. You review the draft and we adjust it until you're happy with the result.</p></details>
+    <details><summary>How do I pay?</summary><p>We'll agree on payment details over WhatsApp before work starts.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>WebWise</strong>: websites that work as hard as you do.</p>
+    <p style="margin-top:8px"><a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp +213 561 068 485</a></p>
+    <p class="fine" style="margin-top:14px">&copy; <span id="yr"></span> WebWise. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">Chat on WhatsApp</a>
+
+<script>
+var NUM = "213561068485";
+function wa(text){ return "https://wa.me/" + NUM + "?text=" + encodeURIComponent(text); }
+var hello = "Hi WebWise! I'd like to talk about getting a website.";
+["waHero","waBook","waFoot","waFloat"].forEach(function(id){ document.getElementById(id).href = wa(hello); });
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+document.querySelectorAll("[data-plan]").forEach(function(a){
+  a.addEventListener("click", function(){ document.getElementById("plan").value = a.dataset.plan; });
+});
+
+document.getElementById("f").addEventListener("submit", function(e){
+  e.preventDefault();
+  var v = function(id){ return document.getElementById(id).value.trim(); };
+  var err = document.getElementById("err");
+  if(!v("name") || !/^\S+@\S+\.\S+$/.test(v("email"))){
+    err.textContent = "Please enter your name and a valid email address.";
+    return;
+  }
+  err.textContent = "";
+  var text = "Hi WebWise! I'd like to book a website.\n\n" +
+    "Name: " + v("name") + "\n" +
+    "Email: " + v("email") + "\n" +
+    "Business: " + (v("biz") || "-") + "\n" +
+    "Package: " + v("plan") + "\n" +
+    "Details: " + (v("msg") || "-");
+  window.open(wa(text), "_blank", "noopener");
+});
+</script>
+</body>
+</html>
