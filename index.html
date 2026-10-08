@@ -140,8 +140,9 @@ footer a{color:var(--sky)}
       <label>About your business <span style="font-weight:400;color:var(--mute)">(optional)</span><textarea id="msg" placeholder="Business name, what you do, any website you like"></textarea></label>
       <p class="err" id="err" role="alert"></p>
       <button class="btn" type="submit">Book my website</button>
-      <p class="fine">Pressing the button opens WhatsApp with your details ready to send. Prefer to chat first? <a id="waLink" href="#" target="_blank" rel="noopener">Message us</a></p>
+      <p class="fine">We reply with next steps. Prefer to chat first? <a id="igLink" href="#" target="_blank" rel="noopener">Message us on Instagram</a></p>
     </form>
+    <div id="ok" hidden><h2 id="okH"></h2><p id="okP" style="margin:10px 0 18px"></p><a class="btn" id="okBtn" href="#" target="_blank" rel="noopener" style="width:100%">Open Instagram</a></div>
   </div>
 </div></section>
 
@@ -176,19 +177,19 @@ footer a{color:var(--sky)}
 <section class="end"><div class="w"><h2>Ready to get your website?</h2><a class="btn" href="#book">Book my website</a></div></section>
 </main>
 
-<footer><div class="w"><strong style="color:#fff">WebWise</strong> &middot; &copy; <span id="yr"></span> &middot; <a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp us</a></div></footer>
+<footer><div class="w"><strong style="color:#fff">WebWise</strong> &middot; &copy; <span id="yr"></span> &middot; <a id="igFoot" href="#" target="_blank" rel="noopener">Instagram</a></div></footer>
 <div class="bar"><a class="btn" href="#book">Book your website, from $125</a></div>
 
 <script>
-var NUM="213561068485";
-function wa(t){return "https://wa.me/"+NUM+"?text="+encodeURIComponent(t);}
-var hello="Hi WebWise! I'd like to talk about getting a website.";
+var IG_USER="web.wisee"; // your Instagram username, without the @
+var FORM_ENDPOINT="";                   // optional: paste your Formspree or Web3Forms URL to receive bookings by email
+var IG_URL="https://ig.me/m/"+IG_USER;
 document.getElementById("yr").textContent=new Date().getFullYear();
 
 // Meta Pixel: fire a Purchase event (change EVENT_NAME to "Lead" or "Contact" if you prefer)
 var EVENT_NAME="Purchase";
 function track(value,label){try{if(window.fbq){fbq("track",EVENT_NAME,{value:value,currency:"USD",content_name:label});}}catch(e){}}
-["waLink","waFoot"].forEach(function(id){var a=document.getElementById(id);a.href=wa(hello);a.addEventListener("click",function(){track(125,"WhatsApp click");});});
+["igLink","igFoot","okBtn"].forEach(function(id){var a=document.getElementById(id);a.href=IG_URL;a.addEventListener("click",function(){if(id!=="okBtn")track(125,"Instagram click");});});
 
 var radios=document.querySelectorAll('input[name=plan]');
 function sync(){var five=document.querySelector('input[name=plan]:checked').value.indexOf("$325")>-1;
@@ -198,16 +199,33 @@ document.querySelectorAll("[data-plan]").forEach(function(a){a.addEventListener(
   radios[a.dataset.plan==="one"?0:1].checked=true;sync();});});
 radios.forEach(function(r){r.addEventListener("change",sync);});sync();
 
+function showDone(copied){
+  document.getElementById("f").hidden=true;document.getElementById("ok").hidden=false;
+  document.getElementById("okH").textContent=copied?"One last step":"Request received";
+  document.getElementById("okP").textContent=copied
+    ?"Your booking details are copied. In the Instagram chat, paste them and press send, and we'll reply with next steps."
+    :"Thanks! We'll email you shortly. Want a faster reply? Message us on Instagram.";
+}
 document.getElementById("f").addEventListener("submit",function(e){
   e.preventDefault();
   var v=function(id){return document.getElementById(id).value.trim();};
   var plan=document.querySelector('input[name=plan]:checked').value;
-  var err=document.getElementById("err");
+  var err=document.getElementById("err"),btn=e.target.querySelector("button");
   if(!v("name")||!/^\S+@\S+\.\S+$/.test(v("email"))){err.textContent="Please enter your name and a valid email address.";return;}
   err.textContent="";
   track(plan.indexOf("$325")>-1?325:125,"Booking: "+plan);
-  var text="Hi WebWise! I'd like to book a website.\n\nPackage: "+plan+"\nName: "+v("name")+"\nEmail: "+v("email")+"\nAbout my business: "+(v("msg")||"-");
-  window.open(wa(text),"_blank","noopener");
+  if(FORM_ENDPOINT){
+    btn.disabled=true;btn.textContent="Sending...";
+    fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({package:plan,name:v("name"),email:v("email"),message:v("msg")})})
+    .then(function(r){if(!r.ok)throw 0;showDone(false);})
+    .catch(function(){btn.disabled=false;btn.textContent="Book my website";err.textContent="Something went wrong. Please try again or message us on Instagram.";});
+  }else{
+    var text="Hi WebWise! I'd like to book a website.\n\nPackage: "+plan+"\nName: "+v("name")+"\nEmail: "+v("email")+"\nAbout my business: "+(v("msg")||"-");
+    try{navigator.clipboard.writeText(text);}catch(x){}
+    window.open(IG_URL,"_blank","noopener");
+    showDone(true);
+  }
 });
 </script>
 </body>
