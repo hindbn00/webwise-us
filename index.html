@@ -30,6 +30,7 @@ src="https://www.facebook.com/tr?id=1094142800125978&ev=PageView&noscript=1"
 :root{--navy:#15286A;--deep:#0B1640;--teal:#1F8FB0;--sky:#6FC3DD;--ice:#EEF4FA;--ink:#0E1A3D;--mute:#5B6785;--line:#DCE4F0;
 --h:'Montserrat',system-ui,sans-serif;--b:'DM Sans',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{font:400 17px/1.6 var(--b);color:var(--ink);background:#fff}
 a{color:inherit}
@@ -70,8 +71,8 @@ header .btn{padding:10px 20px;font-size:.95rem}
 .book>p{color:var(--mute);margin-bottom:18px;font-size:.96rem}
 form{display:grid;gap:14px}
 label,.lab{display:grid;gap:6px;font-weight:600;font-size:.9rem}
-input[type=text],input[type=email],textarea{font:400 1rem var(--b);padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;background:#F8FAFD;color:var(--ink);width:100%}
-input:focus,textarea:focus{border-color:var(--teal);outline:none;background:#fff}
+input[type=text],input[type=email],select,textarea{font:400 1rem var(--b);padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;background:#F8FAFD;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--teal);outline:none;background:#fff}
 textarea{min-height:84px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:520px){.two{grid-template-columns:1fr}}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -136,7 +137,9 @@ footer a{color:var(--sky)}
           <label><input type="radio" name="plan" value="5-Page Website ($325)" checked><span><b>$325</b>5 pages</span></label>
         </div>
       </div>
-      <div class="two"><label>Your name<input type="text" id="name" autocomplete="name"></label><label>Email<input type="email" id="email" autocomplete="email"></label></div>
+      <label>Your name<input type="text" id="name" autocomplete="name"></label>
+      <div class="two"><label>Best way to reach you<select id="pref"><option>Email</option><option>WhatsApp</option><option>Instagram</option></select></label>
+        <label><span id="ctLbl">Your email</span><input type="text" id="ct" inputmode="email" autocomplete="email" placeholder="you@example.com"></label></div>
       <label>About your business <span style="font-weight:400;color:var(--mute)">(optional)</span><textarea id="msg" placeholder="Business name, what you do, any website you like"></textarea></label>
       <p class="err" id="err" role="alert"></p>
       <button class="btn" type="submit">Book my website</button>
@@ -199,29 +202,37 @@ document.querySelectorAll("[data-plan]").forEach(function(a){a.addEventListener(
   radios[a.dataset.plan==="one"?0:1].checked=true;sync();});});
 radios.forEach(function(r){r.addEventListener("change",sync);});sync();
 
+var CT={"Email":["Your email","you@example.com","email","email"],"WhatsApp":["Your WhatsApp number","+1 555 123 4567","tel","tel"],"Instagram":["Your Instagram username","@yourusername","text","off"]};
+document.getElementById("pref").addEventListener("change",function(){
+  var c=CT[this.value],i=document.getElementById("ct");
+  document.getElementById("ctLbl").textContent=c[0];i.placeholder=c[1];i.inputMode=c[2];i.setAttribute("autocomplete",c[3]);i.value="";i.focus();});
 function showDone(copied){
   document.getElementById("f").hidden=true;document.getElementById("ok").hidden=false;
   document.getElementById("okH").textContent=copied?"One last step":"Request received";
   document.getElementById("okP").textContent=copied
     ?"Your booking details are copied. In the Instagram chat, paste them and press send, and we'll reply with next steps."
-    :"Thanks! We'll email you shortly. Want a faster reply? Message us on Instagram.";
+    :"Thanks! We'll reach out shortly using your preferred contact method. Want a faster reply? Message us on Instagram.";
 }
 document.getElementById("f").addEventListener("submit",function(e){
   e.preventDefault();
   var v=function(id){return document.getElementById(id).value.trim();};
   var plan=document.querySelector('input[name=plan]:checked').value;
   var err=document.getElementById("err"),btn=e.target.querySelector("button");
-  if(!v("name")||!/^\S+@\S+\.\S+$/.test(v("email"))){err.textContent="Please enter your name and a valid email address.";return;}
+  var pref=v("pref"),ct=v("ct");
+  if(!v("name")){err.textContent="Please enter your name.";return;}
+  if(pref==="Email"&&!/^\S+@\S+\.\S+$/.test(ct)){err.textContent="Please enter a valid email address.";return;}
+  if(pref==="WhatsApp"&&ct.replace(/\D/g,"").length<7){err.textContent="Please enter your WhatsApp number with country code.";return;}
+  if(pref==="Instagram"){ct=ct.replace(/^@/,"").trim();if(!ct){err.textContent="Please enter your Instagram username.";return;}ct="@"+ct;}
   err.textContent="";
   track(plan.indexOf("$325")>-1?325:125,"Booking: "+plan);
   if(FORM_ENDPOINT){
     btn.disabled=true;btn.textContent="Sending...";
     fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body:JSON.stringify({package:plan,name:v("name"),email:v("email"),message:v("msg")})})
+      body:JSON.stringify({package:plan,name:v("name"),email:pref==="Email"?ct:undefined,preferred_contact:pref,contact_details:ct,message:v("msg")})})
     .then(function(r){if(!r.ok)throw 0;showDone(false);})
     .catch(function(){btn.disabled=false;btn.textContent="Book my website";err.textContent="Something went wrong. Please try again or message us on Instagram.";});
   }else{
-    var text="Hi WebWise! I'd like to book a website.\n\nPackage: "+plan+"\nName: "+v("name")+"\nEmail: "+v("email")+"\nAbout my business: "+(v("msg")||"-");
+    var text="Hi WebWise! I'd like to book a website.\n\nPackage: "+plan+"\nName: "+v("name")+"\nPreferred contact: "+pref+" ("+ct+")"+"\nAbout my business: "+(v("msg")||"-");
     try{navigator.clipboard.writeText(text);}catch(x){}
     window.open(IG_URL,"_blank","noopener");
     showDone(true);
