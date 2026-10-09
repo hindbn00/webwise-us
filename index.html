@@ -151,7 +151,17 @@ footer a{color:var(--sky)}
       <button class="btn" type="submit">Book my website</button>
       <p class="fine">We reply with next steps. Prefer to chat first? <a id="igLink" href="#" target="_blank" rel="noopener">Message us on Instagram</a></p>
     </form>
-    <div id="ok" hidden><h2 id="okH"></h2><p id="okP" style="margin:10px 0 18px"></p><a class="btn" id="okBtn" href="#" target="_blank" rel="noopener" style="width:100%">Open Instagram</a></div>
+    <div id="ok" hidden><h2 id="okH"></h2><p id="okP" style="margin:10px 0 18px"></p>
+      <form id="pp" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin-bottom:12px">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="bounoua.hindd@gmail.com">
+        <input type="hidden" name="item_name" id="ppItem" value="WebWise website">
+        <input type="hidden" name="amount" id="ppAmt" value="325">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="no_shipping" value="1">
+        <button class="btn" type="submit" id="ppBtn" style="width:100%;background:#FFC439;color:#003087;box-shadow:none">Pay with PayPal</button>
+        <p class="fine">Secure payment through PayPal. You can also pay by card without a PayPal account.</p>
+      </form><a class="btn" id="okBtn" href="#" target="_blank" rel="noopener" style="width:100%">Open Instagram</a></div>
   </div>
 </div></section>
 
@@ -180,7 +190,7 @@ footer a{color:var(--sky)}
   <details><summary>What do I need to provide?</summary><p>Your business name, a short description, contact details, and any logo or photos. No content yet? We'll help.</p></details>
   <details><summary>Are domain and hosting included?</summary><p>The price covers design and building. A domain (usually about $12 a year) is paid to the registrar. We'll explain the options before you commit.</p></details>
   <details><summary>Can I request changes?</summary><p>Yes. You review the draft and we adjust it until you're happy.</p></details>
-  <details><summary>How do I pay?</summary><p>We agree on payment details before work starts.</p></details>
+  <details><summary>How do I pay?</summary><p>Right after you book, you can pay securely with PayPal (or a card through PayPal). Prefer another method? Message us and we'll arrange it.</p></details>
 </div></section>
 
 <section class="end"><div class="w"><h2>Ready to get your website?</h2><a class="btn" href="#book">Book my website</a></div></section>
@@ -212,7 +222,11 @@ var CT={"Email":["Your email","you@example.com","email","email"],"WhatsApp":["Yo
 document.getElementById("pref").addEventListener("change",function(){
   var c=CT[this.value],i=document.getElementById("ct");
   document.getElementById("ctLbl").textContent=c[0];i.placeholder=c[1];i.inputMode=c[2];i.setAttribute("autocomplete",c[3]);i.value="";i.focus();});
-function showDone(copied){
+function showDone(copied,plan){
+  var amt=plan.indexOf("$325")>-1?325:125;
+  document.getElementById("ppAmt").value=amt;
+  document.getElementById("ppItem").value=plan.replace(/\s*\(.*\)/,"");
+  document.getElementById("ppBtn").textContent="Pay $"+amt+" with PayPal";
   document.getElementById("f").hidden=true;document.getElementById("ok").hidden=false;
   document.getElementById("okH").textContent=copied?"One last step":"Request received";
   document.getElementById("okP").textContent=copied
@@ -235,13 +249,13 @@ document.getElementById("f").addEventListener("submit",function(e){
     btn.disabled=true;btn.textContent="Sending...";
     fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
       body:JSON.stringify({package:plan,name:v("name"),email:pref==="Email"?ct:undefined,preferred_contact:pref,contact_details:ct,message:v("msg")})})
-    .then(function(r){if(!r.ok)throw 0;showDone(false);})
+    .then(function(r){if(!r.ok)throw 0;showDone(false,plan);})
     .catch(function(){btn.disabled=false;btn.textContent="Book my website";err.textContent="Something went wrong. Please try again or message us on Instagram.";});
   }else{
     var text="Hi WebWise! I'd like to book a website.\n\nPackage: "+plan+"\nName: "+v("name")+"\nPreferred contact: "+pref+" ("+ct+")"+"\nAbout my business: "+(v("msg")||"-");
     try{navigator.clipboard.writeText(text);}catch(x){}
     window.open(IG_URL,"_blank","noopener");
-    showDone(true);
+    showDone(true,plan);
   }
 });
 </script>
