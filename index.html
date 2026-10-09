@@ -234,6 +234,9 @@ function showDone(copied,plan){
   document.getElementById("ppBtn").textContent=five?"Pay $162.50 deposit with PayPal":"Pay $125 with PayPal";
   document.getElementById("ppNote").textContent=five?"This is a 50% deposit to start your project. The remaining $162.50 is due before your site goes live.":"Full payment for your one-page website.";
   document.getElementById("f").hidden=true;document.getElementById("ok").hidden=false;
+  document.querySelector(".bar").hidden=true;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  setTimeout(function(){document.getElementById("ok").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});},80);
   document.getElementById("okH").textContent=copied?"One last step":"Request received";
   document.getElementById("okP").textContent=copied
     ?"Your booking details are copied. In the Instagram chat, paste them and press send, and we'll reply with next steps."
