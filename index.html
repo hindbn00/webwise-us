@@ -160,6 +160,7 @@ footer a{color:var(--sky)}
         <input type="hidden" name="currency_code" value="USD">
         <input type="hidden" name="no_shipping" value="1">
         <button class="btn" type="submit" id="ppBtn" style="width:100%;background:#FFC439;color:#003087;box-shadow:none">Pay with PayPal</button>
+        <p class="fine" id="ppNote"></p>
         <p class="fine">Secure payment through PayPal. You can also pay by card without a PayPal account.</p>
       </form><a class="btn" id="okBtn" href="#" target="_blank" rel="noopener" style="width:100%">Open Instagram</a></div>
   </div>
@@ -190,7 +191,7 @@ footer a{color:var(--sky)}
   <details><summary>What do I need to provide?</summary><p>Your business name, a short description, contact details, and any logo or photos. No content yet? We'll help.</p></details>
   <details><summary>Are domain and hosting included?</summary><p>The price covers design and building. A domain (usually about $12 a year) is paid to the registrar. We'll explain the options before you commit.</p></details>
   <details><summary>Can I request changes?</summary><p>Yes. You review the draft and we adjust it until you're happy.</p></details>
-  <details><summary>How do I pay?</summary><p>Right after you book, you can pay securely with PayPal (or a card through PayPal). Prefer another method? Message us and we'll arrange it.</p></details>
+  <details><summary>How do I pay?</summary><p>Right after you book, you can pay securely with PayPal (or a card through PayPal). The five-page site starts with a 50% deposit and the balance is due before launch; the one-page site is paid in full upfront. Prefer another method? Message us and we'll arrange it.</p></details>
 </div></section>
 
 <section class="end"><div class="w"><h2>Ready to get your website?</h2><a class="btn" href="#book">Book my website</a></div></section>
@@ -205,10 +206,12 @@ var FORM_ENDPOINT="https://formspree.io/f/meaealkk";                   // option
 var IG_URL="https://ig.me/m/"+IG_USER;
 document.getElementById("yr").textContent=new Date().getFullYear();
 
-// Meta Pixel: fire a Purchase event (change EVENT_NAME to "Lead" or "Contact" if you prefer)
-var EVENT_NAME="Purchase";
-function track(value,label){try{if(window.fbq){fbq("track",EVENT_NAME,{value:value,currency:"USD",content_name:label});}}catch(e){}}
+// Meta Pixel: bookings and Instagram clicks are "Lead"; clicking the PayPal button is "Purchase"
+function track(value,label,ev){try{if(window.fbq){fbq("track",ev||"Lead",{value:value,currency:"USD",content_name:label});}}catch(e){}}
 ["igLink","igFoot","okBtn"].forEach(function(id){var a=document.getElementById(id);a.href=IG_URL;a.addEventListener("click",function(){if(id!=="okBtn")track(125,"Instagram click");});});
+
+document.getElementById("pp").addEventListener("submit",function(){
+  track(parseFloat(document.getElementById("ppAmt").value),document.getElementById("ppItem").value,"Purchase");});
 
 var radios=document.querySelectorAll('input[name=plan]');
 function sync(){var five=document.querySelector('input[name=plan]:checked').value.indexOf("$325")>-1;
@@ -223,10 +226,13 @@ document.getElementById("pref").addEventListener("change",function(){
   var c=CT[this.value],i=document.getElementById("ct");
   document.getElementById("ctLbl").textContent=c[0];i.placeholder=c[1];i.inputMode=c[2];i.setAttribute("autocomplete",c[3]);i.value="";i.focus();});
 function showDone(copied,plan){
-  var amt=plan.indexOf("$325")>-1?325:125;
-  document.getElementById("ppAmt").value=amt;
-  document.getElementById("ppItem").value=plan.replace(/\s*\(.*\)/,"");
-  document.getElementById("ppBtn").textContent="Pay $"+amt+" with PayPal";
+  var five=plan.indexOf("$325")>-1;
+  var amt=five?162.5:125;
+  var name=plan.replace(/\s*\(.*\)/,"");
+  document.getElementById("ppAmt").value=amt.toFixed(2);
+  document.getElementById("ppItem").value=five?name+" - 50% deposit":name;
+  document.getElementById("ppBtn").textContent=five?"Pay $162.50 deposit with PayPal":"Pay $125 with PayPal";
+  document.getElementById("ppNote").textContent=five?"This is a 50% deposit to start your project. The remaining $162.50 is due before your site goes live.":"Full payment for your one-page website.";
   document.getElementById("f").hidden=true;document.getElementById("ok").hidden=false;
   document.getElementById("okH").textContent=copied?"One last step":"Request received";
   document.getElementById("okP").textContent=copied
