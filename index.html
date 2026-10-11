@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WebWise | Professional Websites for Small Businesses, From $125</title>
-<meta name="description" content="Get a professional website for your business. One-page sites from $125, five-page sites from $325. Book your website in 30 seconds.">
-<link rel="icon" href="logo.png">
+<title>WebWise | Agence web en Algérie</title>
+<meta name="description" content="WebWise crée votre site web, boutique YouCan, landing page, script et voix off IA en Algérie, à prix fixes.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#16226b;--navy-d:#0f1850;--teal:#2c8aa8;--sky:#eaf3f8;--ink:#14204f;--muted:#5a6788;--white:#fff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;color:var(--ink);background:var(--white);line-height:1.7;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:5;background:var(--white);border-bottom:1px solid #dfe7ef}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{font-weight:800;font-size:1.6rem;text-decoration:none;color:var(--navy);letter-spacing:.02em;direction:ltr}
+.brand span{color:var(--teal)}
+.menu{display:flex;gap:26px;align-items:center}
+.menu a{text-decoration:none;font-weight:600;font-size:.95rem}
+.menu a:hover{color:var(--teal)}
+.flags{display:flex;gap:8px}
+.flags button{padding:0;border:2px solid transparent;background:none;border-radius:6px;cursor:pointer;line-height:0;opacity:.55;transition:opacity .15s}
+.flags button svg{width:34px;height:23px;border-radius:4px;box-shadow:0 0 0 1px #c9d4e0}
+.flags button[aria-pressed=true]{opacity:1;border-color:var(--teal)}
+.btn{display:inline-block;background:var(--teal);color:#fff;padding:12px 26px;border-radius:12px;text-decoration:none;font-weight:700;font-family:inherit;font-size:1rem;border:0;cursor:pointer}
+.btn:hover{background:#237390}
+.btn.light{background:var(--white);color:var(--navy)}
+.btn.light:hover{background:var(--sky)}
+.hero{background:var(--navy);color:#fff;padding:76px 0}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.2;font-weight:800}
+.hero p{margin:20px 0 30px;color:#c9d6f2;font-size:1.1rem;max-width:32em}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn.ghost{background:none;border:2px solid #7f93d6;color:#fff}
+.hero .btn.ghost:hover{background:#ffffff18}
+.logo-card{background:#fff;border-radius:24px;padding:18px;max-width:340px;margin-inline:auto}
+.logo-card img{width:100%;height:auto;display:block}
+section{padding:76px 0}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.25;color:var(--navy);font-weight:800;margin-bottom:10px}
+.sub{color:var(--muted);max-width:36em;margin-bottom:38px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{border:2px solid #d6e2ee;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#fff}
+.card h3{font-size:1.3rem;color:var(--navy)}
+.card p{color:var(--muted);font-size:.98rem;flex:1}
+.price{font-size:2.1rem;font-weight:800;color:var(--teal);line-height:1.2;margin:8px 0 12px}
+.price small{font-size:1rem;font-weight:600;color:var(--muted)}
+.card .btn{text-align:center}
+.card.main{border-color:var(--navy);background:var(--navy);color:#fff}
+.card.main h3{color:#fff}.card.main p{color:#c9d6f2}.card.main .price{color:#fff}.card.main .price small{color:#c9d6f2}
+.card.main .btn{background:#fff;color:var(--navy)}
+.contact{background:var(--navy);color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact .sub{margin-inline:auto;color:#c9d6f2}
+.contact .actions{justify-content:center}
+.contact .btn.ghost{background:none;border:2px solid #7f93d6;color:#fff}
+.contact .btn.ghost:hover{background:#ffffff18}
+.contact .info{margin-top:26px;color:#c9d6f2;direction:ltr}
+footer{background:var(--navy-d);color:#9fb0dd;padding:22px 0;text-align:center;font-size:.9rem}
+@media (max-width:820px){
+ .hero .wrap,.grid{grid-template-columns:1fr}
+ .logo-card{max-width:190px;padding:12px;order:-1;margin-inline:0}
+ .menu a{display:none}
+ .hero{padding:32px 0 40px}
+ .hero .wrap{gap:22px}
+ h1{font-size:1.85rem;line-height:1.3}
+ .hero p{font-size:1rem;margin:14px 0 22px}
+ .hero .btn{padding:11px 20px}
+ section{padding:48px 0}
+ .card{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -16,257 +87,125 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1805549023910251');
-fbq('init', '2104164543529321');
-fbq('init', '1000653483048109');
+fbq('init', '1338373921541524');
+fbq('init', '1339090918162479');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1805549023910251&ev=PageView&noscript=1"
-/><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2104164543529321&ev=PageView&noscript=1"
-/><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1000653483048109&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1338373921541524&ev=PageView&noscript=1"
+/></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1339090918162479&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#15286A;--deep:#0B1640;--teal:#1F8FB0;--sky:#6FC3DD;--ice:#EEF4FA;--ink:#0E1A3D;--mute:#5B6785;--line:#DCE4F0;
---h:'Montserrat',system-ui,sans-serif;--b:'DM Sans',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font:400 17px/1.6 var(--b);color:var(--ink);background:#fff}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
-.w{max-width:1120px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--h);letter-spacing:-.025em;line-height:1.1}
-h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:800;margin-bottom:34px}
-h3{font-size:1.1rem;font-weight:700}
-.btn{display:inline-flex;justify-content:center;align-items:center;background:linear-gradient(135deg,var(--teal),var(--navy));color:#fff;font:700 1.05rem var(--b);padding:16px 28px;border-radius:12px;border:0;text-decoration:none;cursor:pointer;box-shadow:0 12px 26px -10px rgba(31,143,176,.8);transition:transform .2s}
-.btn:hover{transform:translateY(-2px)}
-
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-header .w{display:flex;justify-content:space-between;align-items:center;height:66px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.3rem var(--h);color:var(--navy)}
-.logo img{height:32px}.logo b{color:var(--teal)}
-header .btn{padding:10px 20px;font-size:.95rem}
-
-.hero{background:radial-gradient(800px 500px at 90% 0,rgba(31,143,176,.45),transparent 60%),linear-gradient(160deg,var(--deep),var(--navy));color:#fff;padding:56px 0 72px}
-.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
-@media(max-width:900px){.hero .w{grid-template-columns:1fr;gap:32px}}
-.hero h1{font-size:clamp(2.1rem,4.8vw,3.3rem);font-weight:800;margin-bottom:16px}
-.hero h1 em{font-style:normal;color:var(--sky)}
-.lead{font-size:1.1rem;color:#C9D6EE;margin-bottom:26px;max-width:32em}
-.plans{display:grid;gap:14px}
-.plan{display:block;text-decoration:none;color:var(--ink);background:#fff;border:3px solid transparent;border-radius:18px;padding:22px 24px;position:relative;cursor:pointer;transition:transform .2s,border-color .2s}
-.plan:hover{transform:translateY(-2px)}
-.plan.sel{border-color:var(--sky);box-shadow:0 0 0 4px rgba(111,195,221,.3)}
-.plan .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.plan h3{font-size:1.2rem}
-.plan .pr{font:800 2.6rem/1 var(--h);color:var(--navy);letter-spacing:-.04em}.plan .pr sup{font-size:1.2rem;vertical-align:top;position:relative;top:.3rem}
-.plan ul{list-style:none;padding:0;margin-top:10px;display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--mute);font-size:.93rem}
-.plan li::before{content:"✓ ";color:var(--teal);font-weight:800}
-.tag{position:absolute;top:-12px;right:20px;background:var(--sky);color:var(--deep);font:800 .72rem var(--h);letter-spacing:.06em;padding:5px 12px;border-radius:99px}
-.note{margin-top:16px;color:#AFC0E0;font-size:.92rem}
-
-.book{background:#fff;color:var(--ink);border-radius:22px;padding:30px;box-shadow:0 40px 80px -30px rgba(0,0,0,.65)}
-.book h2{font-size:1.5rem;margin-bottom:4px}
-.book>p{color:var(--mute);margin-bottom:18px;font-size:.96rem}
-form{display:grid;gap:14px}
-label,.lab{display:grid;gap:6px;font-weight:600;font-size:.9rem}
-input[type=text],input[type=email],select,textarea{font:400 1rem var(--b);padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;background:#F8FAFD;color:var(--ink);width:100%}
-input:focus,select:focus,textarea:focus{border-color:var(--teal);outline:none;background:#fff}
-textarea{min-height:84px;resize:vertical}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:520px){.two{grid-template-columns:1fr}}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opts label{position:relative;font-weight:600;cursor:pointer}
-.opts input{position:absolute;opacity:0}
-.opts span{display:block;border:1.5px solid var(--line);border-radius:11px;padding:11px 12px;font-size:.92rem;text-align:center}
-.opts b{display:block;font:800 1.15rem var(--h);color:var(--navy)}
-.opts input:checked+span{border-color:var(--teal);background:#E6F4F9}
-.opts input:focus-visible+span{outline:3px solid var(--sky)}
-.err{color:#B3261E;font-size:.9rem;min-height:1.1em}
-.fine{font-size:.84rem;color:var(--mute);text-align:center}
-.fine a{color:var(--navy);font-weight:600}
-
-section{padding:76px 0}.alt{background:var(--ice)}
-.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
-.it{padding-top:16px;border-top:3px solid var(--teal)}
-.it p{color:var(--mute);margin-top:6px;font-size:.97rem}
-.steps{counter-reset:s}.steps .it{counter-increment:s}.steps h3::before{content:"0" counter(s) "  ";color:var(--teal)}
-details{border-bottom:1px solid var(--line);padding:18px 0;max-width:760px}
-summary{font:700 1.02rem var(--h);cursor:pointer}
-details p{color:var(--mute);margin-top:8px}
-.end{background:linear-gradient(160deg,var(--deep),var(--navy));color:#fff;text-align:center;padding:68px 0}
-.end h2{margin-bottom:22px}
-.end .btn{background:#fff;color:var(--navy);box-shadow:none}
-footer{background:var(--deep);color:#8FA3CC;padding:26px 0 90px;text-align:center;font-size:.9rem}
-footer a{color:var(--sky)}
-.bar{display:none}
-@media(max-width:900px){.bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 14px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}.bar .btn{width:100%;padding:14px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
-<!-- Vercel Web Analytics -->
-<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-<header><div class="w">
-  <a class="logo" href="#top"><img src="logo.png" alt="WebWise logo">Web<b>Wise</b></a>
-  <a class="btn" href="#book">Book now</a>
+<header><div class="wrap nav">
+ <a class="brand" href="#top">WEB<span>WISE</span></a>
+ <nav class="menu" aria-label="Menu">
+  <a href="#services" data-ar="الخدمات">Services</a>
+  <a href="#contact" data-ar="اتصل بنا">Contact</a>
+ </nav>
+ <div class="flags" role="group" aria-label="Langue / اللغة">
+  <button id="btn-ar" aria-label="العربية" title="العربية" aria-pressed="false">
+   <svg viewBox="0 0 30 20"><rect width="15" height="20" fill="#006233"/><rect x="15" width="15" height="20" fill="#fff"/><circle cx="15" cy="10" r="5" fill="#d21034"/><circle cx="16.4" cy="10" r="4.1" fill="#fff"/><polygon fill="#d21034" points="17.2,7.8 17.73,9.27 19.29,9.32 18.06,10.28 18.49,11.78 17.2,10.9 15.91,11.78 16.34,10.28 15.11,9.32 16.67,9.27"/></svg>
+  </button>
+  <button id="btn-fr" aria-label="Français" title="Français" aria-pressed="true">
+   <svg viewBox="0 0 30 20"><rect width="10" height="20" fill="#0055a4"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ef4135"/></svg>
+  </button>
+ </div>
 </div></header>
 
 <main id="top">
-<section class="hero" style="padding-bottom:72px"><div class="w">
+ <div class="hero"><div class="wrap">
   <div>
-    <h1>A professional website for your business, <em>starting at $125.</em></h1>
-    <p class="lead">Fast, mobile-friendly websites that make your business look trustworthy and help customers contact you. One flat price, no surprises.</p>
-    <div class="plans" id="plans">
-      <a class="plan" href="#book" data-plan="one"><div class="top"><h3>One-Page Website</h3><span class="pr"><sup>$</sup>125</span></div>
-        <ul><li>1 custom page</li><li>Mobile-friendly</li><li>Contact button</li><li>Basic SEO</li></ul></a>
-      <a class="plan sel" href="#book" data-plan="five"><span class="tag">MOST POPULAR</span><div class="top"><h3>5-Page Website</h3><span class="pr"><sup>$</sup>325</span></div>
-        <ul><li>5 custom pages</li><li>Mobile-friendly</li><li>Contact form</li><li>SEO on every page</li></ul></a>
-    </div>
-    <p class="note">One-time payment. Revisions included. Need a store or booking system? Ask for a custom quote.</p>
+   <h1 data-ar="نصنع لك موقعك أو متجرك الإلكتروني في الجزائر">Votre site web ou votre boutique en ligne, créés pour vous en Algérie.</h1>
+   <p data-ar="WebWise وكالة ويب جزائرية: مواقع الخدمات، متاجر YouCan، صفحات هبوط وتعليق صوتي بالذكاء الاصطناعي، بأسعار واضحة.">WebWise est une agence web algérienne : sites pour professionnels de services, boutiques YouCan, landing pages, script et voix off IA, à des prix clairs.</p>
+   <div class="actions">
+    <a class="btn light" data-cta="Devis" href="#" data-ar="اطلب عرض سعر">Demander un devis</a>
+    <a class="btn ghost" href="#services" data-ar="شاهد الأسعار">Voir les tarifs</a>
+   </div>
   </div>
+  <div class="logo-card"><img src="logo.jpg" alt="WebWise" width="568" height="452"></div>
+ </div></div>
 
-  <div class="book" id="book">
-    <h2>Book your website</h2>
-    <p>Takes 30 seconds. We reply with next steps and a timeline.</p>
-    <form id="f" novalidate>
-      <div class="lab">Choose your package
-        <div class="opts">
-          <label><input type="radio" name="plan" value="One-Page Website ($125)"><span><b>$125</b>One page</span></label>
-          <label><input type="radio" name="plan" value="5-Page Website ($325)" checked><span><b>$325</b>5 pages</span></label>
-        </div>
-      </div>
-      <label>Your name<input type="text" id="name" autocomplete="name"></label>
-      <div class="two"><label>Best way to reach you<select id="pref"><option>Email</option><option>WhatsApp</option><option>Instagram</option></select></label>
-        <label><span id="ctLbl">Your email</span><input type="text" id="ct" inputmode="email" autocomplete="email" placeholder="you@example.com"></label></div>
-      <label>About your business <span style="font-weight:400;color:var(--mute)">(optional)</span><textarea id="msg" placeholder="Business name, what you do, any website you like"></textarea></label>
-      <p class="err" id="err" role="alert"></p>
-      <button class="btn" type="submit">Book my website</button>
-      <p class="fine">We reply with next steps. Prefer to chat first? <a id="igLink" href="#" target="_blank" rel="noopener">Message us on Instagram</a></p>
-    </form>
-    <div id="ok" hidden><h2 id="okH"></h2><p id="okP" style="margin:10px 0 18px"></p>
-      <form id="pp" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin-bottom:12px">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="bounoua.hindd@gmail.com">
-        <input type="hidden" name="item_name" id="ppItem" value="WebWise website">
-        <input type="hidden" name="amount" id="ppAmt" value="325">
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="hidden" name="no_shipping" value="1">
-        <button class="btn" type="submit" id="ppBtn" style="width:100%;background:#FFC439;color:#003087;box-shadow:none">Pay with PayPal</button>
-        <p class="fine" id="ppNote"></p>
-        <p class="fine">Secure payment through PayPal. You can also pay by card without a PayPal account.</p>
-      </form><a class="btn" id="okBtn" href="#" target="_blank" rel="noopener" style="width:100%">Open Instagram</a></div>
+ <section id="services"><div class="wrap">
+  <h2 data-ar="خدماتنا">Nos services</h2>
+  <p class="sub" data-ar="أسعار ثابتة ومعلنة، بدون مفاجآت.">Des prix fixes et affichés, sans surprise.</p>
+  <div class="grid">
+   <article class="card main">
+    <h3 data-ar="موقع إلكتروني للخدمات">Site web pour services</h3>
+    <p data-ar="موقع احترافي كامل لنشاطك الخدمي (شركة، طبيب، مطعم، ورشة...) مع نموذج تواصل وطلب عرض سعر، أزرار اتصال وواتساب، وتصميم مناسب للهاتف.">Un site professionnel complet pour votre activité de services (entreprise, médecin, restaurant, artisan...) avec formulaire de contact et de demande de devis, boutons d'appel et WhatsApp, et un design adapté au mobile.</p>
+    <div class="price" data-ar="18000 دج">18 000 DA</div>
+    <a class="btn" data-cta="Site web services" href="#" data-ar="اطلب الآن">Commander</a>
+   </article>
+   <article class="card">
+    <h3 data-ar="متجر إلكتروني على YouCan">Boutique en ligne sur YouCan</h3>
+    <p data-ar="متجر جاهز لعرض منتجاتك وتلقي الطلبات، مع تصميم مرتب وسهل الاستخدام على الهاتف.">Une boutique prête à présenter vos produits et recevoir des commandes, avec un design soigné et simple sur mobile.</p>
+    <div class="price" data-ar="4500 دج">4 500 DA</div>
+    <a class="btn" data-cta="Boutique YouCan" href="#" data-ar="اطلب الآن">Commander</a>
+   </article>
+   <article class="card">
+    <h3 data-ar="صفحة هبوط">Landing page</h3>
+    <p data-ar="صفحة واحدة مركّزة لبيع منتج أو خدمة أو جمع طلبات الزبائن.">Une page unique et efficace pour vendre un produit, une offre ou collecter des demandes clients.</p>
+    <div class="price" data-ar="2500 دج">2 500 DA</div>
+    <a class="btn" data-cta="Landing page" href="#" data-ar="اطلب الآن">Commander</a>
+   </article>
+   <article class="card">
+    <h3 data-ar="سيناريو + تعليق صوتي بالذكاء الاصطناعي">Script + voix off IA</h3>
+    <p data-ar="نكتب لك نص الفيديو الإعلاني ونسلّمك التعليق الصوتي بصوت اصطناعي واضح، جاهز للنشر.">Nous rédigeons le script de votre vidéo publicitaire et vous livrons la voix off avec une voix IA claire, prête à publier.</p>
+    <div class="price" data-ar="500 دج">500 DA</div>
+    <a class="btn" data-cta="Script + voix off IA" href="#" data-ar="اطلب الآن">Commander</a>
+   </article>
   </div>
-</div></section>
+ </div></section>
 
-<section><div class="w">
-  <h2>Included with every website</h2>
-  <div class="g">
-    <div class="it"><h3>Modern, professional design</h3><p>Clean layouts that make your business look established.</p></div>
-    <div class="it"><h3>Fast on every device</h3><p>Mobile-first and lightweight, so visitors don't leave.</p></div>
-    <div class="it"><h3>Built to get contacts</h3><p>Clear buttons and forms that turn visitors into inquiries.</p></div>
-    <div class="it"><h3>Ready for Google</h3><p>Search-friendly structure so locals can find you.</p></div>
-  </div>
-</div></section>
-
-<section class="alt"><div class="w">
-  <h2>How it works</h2>
-  <div class="g steps">
-    <div class="it"><h3>Book</h3><p>Choose a package and send your details.</p></div>
-    <div class="it"><h3>We build</h3><p>You review the draft and request changes.</p></div>
-    <div class="it"><h3>Launch</h3><p>We publish your site and make sure it works.</p></div>
-  </div>
-</div></section>
-
-<section id="faq"><div class="w">
-  <h2>Common questions</h2>
-  <details><summary>How long does it take?</summary><p>One-page sites usually take a few days. Five-page sites take about a week, depending on how quickly you send content.</p></details>
-  <details><summary>What do I need to provide?</summary><p>Your business name, a short description, contact details, and any logo or photos. No content yet? We'll help.</p></details>
-  <details><summary>Are domain and hosting included?</summary><p>The price covers design and building. A domain (usually about $12 a year) is paid to the registrar. We'll explain the options before you commit.</p></details>
-  <details><summary>Can I request changes?</summary><p>Yes. You review the draft and we adjust it until you're happy.</p></details>
-  <details><summary>How do I pay?</summary><p>Right after you book, you can pay securely with PayPal (or a card through PayPal). The five-page site starts with a 50% deposit and the balance is due before launch; the one-page site is paid in full upfront. Prefer another method? Message us and we'll arrange it.</p></details>
-</div></section>
-
-<section class="end"><div class="w"><h2>Ready to get your website?</h2><a class="btn" href="#book">Book my website</a></div></section>
+ <section id="contact" class="contact"><div class="wrap">
+  <h2 data-ar="لنبدأ مشروعك">Parlons de votre projet</h2>
+  <p class="sub" data-ar="راسلنا على ماسنجر أو واتساب وسنرد عليك بسرعة.">Écrivez-nous sur Messenger ou WhatsApp, nous vous répondons rapidement.</p>
+  <div class="actions"><a class="btn light" data-cta="Contact" href="#" data-ar="تواصل عبر ماسنجر">Contacter sur Messenger</a><a class="btn ghost" dir="ltr" href="https://wa.me/213774129401" target="_blank" rel="noopener">WhatsApp 0774 12 94 01</a></div>
+ </div></section>
 </main>
 
-<footer><div class="w"><strong style="color:#fff">WebWise</strong> &middot; &copy; <span id="yr"></span> &middot; <a id="igFoot" href="#" target="_blank" rel="noopener">Instagram</a></div></footer>
-<div class="bar"><a class="btn" href="#book">Book your website, from $125</a></div>
+<footer><div class="wrap">© <span id="y"></span> WebWise. <span data-ar="جميع الحقوق محفوظة.">Tous droits réservés.</span></div></footer>
 
 <script>
-var IG_USER="web.wisee"; // your Instagram username, without the @
-var FORM_ENDPOINT="https://formspree.io/f/meaealkk";                   // optional: paste your Formspree or Web3Forms URL to receive bookings by email
-var IG_URL="https://ig.me/m/"+IG_USER;
-document.getElementById("yr").textContent=new Date().getFullYear();
+// Messenger link of your Facebook page (buttons open a chat with your page)
+var MESSENGER="https://m.me/61557537533407";
+document.getElementById("y").textContent=new Date().getFullYear();
 
-// Meta Pixel: bookings and Instagram clicks are "Lead"; clicking the PayPal button is "Purchase"
-function track(value,label,ev){try{if(window.fbq){fbq("track",ev||"Lead",{value:value,currency:"USD",content_name:label});}}catch(e){}}
-["igLink","igFoot","okBtn"].forEach(function(id){var a=document.getElementById(id);a.href=IG_URL;a.addEventListener("click",function(){if(id!=="okBtn")track(125,"Instagram click");});});
-
-document.getElementById("pp").addEventListener("submit",function(){
-  track(parseFloat(document.getElementById("ppAmt").value),document.getElementById("ppItem").value,"Purchase");});
-
-var radios=document.querySelectorAll('input[name=plan]');
-function sync(){var five=document.querySelector('input[name=plan]:checked').value.indexOf("$325")>-1;
-  document.querySelector('[data-plan=five]').classList.toggle("sel",five);
-  document.querySelector('[data-plan=one]').classList.toggle("sel",!five);}
-document.querySelectorAll("[data-plan]").forEach(function(a){a.addEventListener("click",function(){
-  radios[a.dataset.plan==="one"?0:1].checked=true;sync();});});
-radios.forEach(function(r){r.addEventListener("change",sync);});sync();
-
-var CT={"Email":["Your email","you@example.com","email","email"],"WhatsApp":["Your WhatsApp number","+1 555 123 4567","tel","tel"],"Instagram":["Your Instagram username","@yourusername","text","off"]};
-document.getElementById("pref").addEventListener("change",function(){
-  var c=CT[this.value],i=document.getElementById("ct");
-  document.getElementById("ctLbl").textContent=c[0];i.placeholder=c[1];i.inputMode=c[2];i.setAttribute("autocomplete",c[3]);i.value="";i.focus();});
-function showDone(copied,plan){
-  var five=plan.indexOf("$325")>-1;
-  var amt=five?162.5:125;
-  var name=plan.replace(/\s*\(.*\)/,"");
-  document.getElementById("ppAmt").value=amt.toFixed(2);
-  document.getElementById("ppItem").value=five?name+" - 50% deposit":name;
-  document.getElementById("ppBtn").textContent=five?"Pay $162.50 deposit with PayPal":"Pay $125 with PayPal";
-  document.getElementById("ppNote").textContent=five?"This is a 50% deposit to start your project. The remaining $162.50 is due before your site goes live.":"Full payment for your one-page website.";
-  document.getElementById("f").hidden=true;document.getElementById("ok").hidden=false;
-  document.querySelector(".bar").hidden=true;
-  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-  setTimeout(function(){document.getElementById("ok").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});},80);
-  document.getElementById("okH").textContent=copied?"One last step":"Request received";
-  document.getElementById("okP").textContent=copied
-    ?"Your booking details are copied. In the Instagram chat, paste them and press send, and we'll reply with next steps."
-    :"Thanks! We'll reach out shortly using your preferred contact method. Want a faster reply? Message us on Instagram.";
-}
-document.getElementById("f").addEventListener("submit",function(e){
-  e.preventDefault();
-  var v=function(id){return document.getElementById(id).value.trim();};
-  var plan=document.querySelector('input[name=plan]:checked').value;
-  var err=document.getElementById("err"),btn=e.target.querySelector("button");
-  var pref=v("pref"),ct=v("ct");
-  if(!v("name")){err.textContent="Please enter your name.";return;}
-  if(pref==="Email"&&!/^\S+@\S+\.\S+$/.test(ct)){err.textContent="Please enter a valid email address.";return;}
-  if(pref==="WhatsApp"&&ct.replace(/\D/g,"").length<7){err.textContent="Please enter your WhatsApp number with country code.";return;}
-  if(pref==="Instagram"){ct=ct.replace(/^@/,"").trim();if(!ct){err.textContent="Please enter your Instagram username.";return;}ct="@"+ct;}
-  err.textContent="";
-  track(plan.indexOf("$325")>-1?325:125,"Booking: "+plan);
-  if(FORM_ENDPOINT){
-    btn.disabled=true;btn.textContent="Sending...";
-    fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body:JSON.stringify({package:plan,name:v("name"),email:pref==="Email"?ct:undefined,preferred_contact:pref,contact_details:ct,message:v("msg")})})
-    .then(function(r){if(!r.ok)throw 0;showDone(false,plan);})
-    .catch(function(){btn.disabled=false;btn.textContent="Book my website";err.textContent="Something went wrong. Please try again or message us on Instagram.";});
-  }else{
-    var text="Hi WebWise! I'd like to book a website.\n\nPackage: "+plan+"\nName: "+v("name")+"\nPreferred contact: "+pref+" ("+ct+")"+"\nAbout my business: "+(v("msg")||"-");
-    try{navigator.clipboard.writeText(text);}catch(x){}
-    window.open(IG_URL,"_blank","noopener");
-    showDone(true,plan);
-  }
+// Messenger buttons + Meta Pixel events
+document.querySelectorAll("[data-cta]").forEach(function(a){
+ a.href=MESSENGER;a.target="_blank";a.rel="noopener";
+ a.addEventListener("click",function(){
+  if(typeof fbq!=="function")return;
+  // Every Messenger button: Contact event
+  fbq("track","Contact",{content_name:a.dataset.cta});
+ });
 });
+
+// WhatsApp button
+var wa=document.querySelector('a[href^="https://wa.me"]');
+if(wa)wa.addEventListener("click",function(){
+ if(typeof fbq==="function")fbq("track","Contact",{content_name:"WhatsApp"});
+});
+
+var els=document.querySelectorAll("[data-ar]");
+els.forEach(function(e){e.dataset.fr=e.innerHTML});
+var titles={fr:"WebWise | Agence web en Algérie",ar:"WebWise | وكالة ويب في الجزائر"};
+function setLang(l){
+ var h=document.documentElement;
+ h.lang=l;h.dir=l==="ar"?"rtl":"ltr";
+ els.forEach(function(e){e.innerHTML=l==="ar"?e.dataset.ar:e.dataset.fr});
+ document.title=titles[l];
+ document.getElementById("btn-ar").setAttribute("aria-pressed",l==="ar");
+ document.getElementById("btn-fr").setAttribute("aria-pressed",l==="fr");
+ try{localStorage.setItem("lang",l)}catch(e){}
+}
+document.getElementById("btn-ar").onclick=function(){setLang("ar")};
+document.getElementById("btn-fr").onclick=function(){setLang("fr")};
+var saved="fr";try{saved=localStorage.getItem("lang")||"fr"}catch(e){}
+if(saved==="ar")setLang("ar");
 </script>
 </body>
 </html>
